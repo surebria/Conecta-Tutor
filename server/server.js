@@ -54,8 +54,10 @@ const server = http.createServer((req, res) => {
         res.end(JSON.stringify({
           success: true,
           message: 'Inicio de sesión exitoso.',
-          tipo: user.tipo, // Enviar el tipo de usuario (alumno/tutor)
-          token: 'fake-jwt-token'
+          tipo: user.tipo, // Tipo de usuario (alumno/tutor)
+          token: 'fake-jwt-token',
+          nombre: user.nombre, // Nombre del usuario
+          apellidos: user.apellidos // Apellidos del usuario
         }));
       } else {
         res.writeHead(401, { 'Content-Type': 'application/json' });

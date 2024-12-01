@@ -21,5 +21,13 @@
     "id": "221512",
     "contrasena": "jorge",
     "tipo": "alumno"
+  },
+  {
+    "nombre": "sonia",
+    "apellidos": "jimenez",
+    "usuario": "sonya",
+    "id": "331511",
+    "contrasena": "sonia",
+    "tipo": "alumno"
   }
 ]

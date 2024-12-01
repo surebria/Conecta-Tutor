@@ -19,19 +19,20 @@ export class LoginComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
-    const url = 'http://localhost:3000/login';
+    const url = 'http://localhost:3000/login'; // Endpoint del backend
     this.http.post(url, this.credentials).subscribe({
       next: (response: any) => {
         if (response.success) {
           alert('Inicio de sesión exitoso.');
-          // Guardar token
+          // Guardar el token y los datos completos del usuario en el localStorage
           localStorage.setItem('token', response.token);
-
+          localStorage.setItem('user', JSON.stringify(response)); // Guarda toda la información del usuario
+  
           // Redirigir según el tipo de usuario
           if (response.tipo === 'alumno') {
-            this.router.navigate(['/perfil-alumno']); // Ruta para alumno
+            this.router.navigate(['/perfil-alumno']); // Redirigir a perfil alumno
           } else if (response.tipo === 'tutor') {
-            this.router.navigate(['/perfil-tutor']); // Ruta para tutor
+            this.router.navigate(['/perfil-tutor']); // Redirigir a perfil tutor
           }
         } else {
           alert(response.message);
@@ -43,4 +44,5 @@ export class LoginComponent {
       }
     });
   }
+  
 }
