@@ -5,5 +5,21 @@
     "usuario": "vale_nuez",
     "id": "331512",
     "contrasena": "valeria"
+  },
+  {
+    "nombre": "victoria",
+    "apellidos": "lopez",
+    "usuario": "vicky",
+    "id": "331514",
+    "contrasena": "victoria",
+    "tipo": "tutor"
+  },
+  {
+    "nombre": "jorge",
+    "apellidos": "galvan",
+    "usuario": "jorgito",
+    "id": "221512",
+    "contrasena": "jorge",
+    "tipo": "alumno"
   }
 ]

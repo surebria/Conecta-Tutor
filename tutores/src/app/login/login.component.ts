@@ -1,7 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,16 +16,23 @@ export class LoginComponent {
     contrasena: ''
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
-    const url = 'http://localhost:3000/login'; // Endpoint del backend
+    const url = 'http://localhost:3000/login';
     this.http.post(url, this.credentials).subscribe({
       next: (response: any) => {
         if (response.success) {
           alert('Inicio de sesión exitoso.');
-          // Guardar token o redirigir al usuario
-          localStorage.setItem('token', response.token); // Ejemplo
+          // Guardar token
+          localStorage.setItem('token', response.token);
+
+          // Redirigir según el tipo de usuario
+          if (response.tipo === 'alumno') {
+            this.router.navigate(['/perfil-alumno']); // Ruta para alumno
+          } else if (response.tipo === 'tutor') {
+            this.router.navigate(['/perfil-tutor']); // Ruta para tutor
+          }
         } else {
           alert(response.message);
         }

@@ -20,6 +20,12 @@
         <label for="contrasena">Contraseña:</label>
         <input type="password" id="contrasena" [(ngModel)]="user.contrasena" name="contrasena" required>
         
+        <label for="tipo">Tipo de Usuario:</label>
+      <select id="tipo" [(ngModel)]="user.tipo" name="tipo" required>
+        <option value="alumno">Alumno</option>
+        <option value="tutor">Tutor</option>
+      </select>
+
         <button type="submit">Registrarme</button>
       </form>
       
