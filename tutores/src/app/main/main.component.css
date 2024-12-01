@@ -1,0 +1,37 @@
+.main {
+    background-image: url('/assets/img/fondo_main.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content {
+    text-align: center;
+    color: #F3F0E2;
+  }
+  
+  .buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+.buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+h1{
+    font-size: 5rem; 
+    color: #F3F0E2;
+    margin-bottom: 20px;
+}
+  
+p{
+    font-size: 1.5rem; 
+    color: #F3F0E2;
+    margin-bottom: 30px;
+}
