@@ -10,6 +10,7 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css'
 })
+
 export class RegistroComponent {
   user = {
     nombre: '',
